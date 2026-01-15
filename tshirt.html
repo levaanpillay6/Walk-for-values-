@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Walk with Velan Tee</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --saffron:#f57c00;
+  --saffron-light:#ffb74d;
+  --gold:#d4af37;
+  --bg:#fff8f0;
+}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:var(--bg);
+  color:#333;
+}
+
+header{
+  background:linear-gradient(180deg,var(--saffron),var(--saffron-light));
+  color:white;
+  text-align:center;
+  padding:70px 20px;
+}
+
+header h1{
+  font-size:3rem;
+  font-weight:800;
+}
+
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+.card{
+  background:white;
+  padding:40px;
+  border-radius:22px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.section-title{
+  font-size:2.2rem;
+  font-weight:700;
+  color:var(--saffron);
+  text-align:center;
+  margin-bottom:30px;
+}
+
+form input, form select{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  border-radius:10px;
+  border:1px solid #ddd;
+}
+
+label{font-weight:600;}
+
+.banking{
+  background:#fff3e0;
+  padding:25px;
+  border-radius:15px;
+  margin:30px 0;
+}
+
+.banking strong{
+  color:var(--saffron);
+}
+
+.cta{
+  text-align:center;
+}
+
+.cta button{
+  background:var(--saffron);
+  color:white;
+  border:none;
+  padding:16px 36px;
+  border-radius:30px;
+  font-size:1rem;
+  font-weight:600;
+  cursor:pointer;
+  transition:0.3s;
+}
+.cta button:hover{
+  transform:scale(1.05);
+}
+
+.note{
+  font-size:0.9rem;
+  text-align:center;
+  margin-top:15px;
+}
+
+footer{
+  background:#111;
+  color:#ccc;
+  text-align:center;
+  padding:30px 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Order Your Walk with Velan Tee</h1>
+  <p>Devotional streetwear • Unity in motion</p>
+</header>
+
+<section>
+  <div class="card">
+
+    <h2 class="section-title">T-Shirt Order Form</h2>
+
+    <form onsubmit="sendOrderWhatsApp(); return false;">
+
+      <label>Full Name</label>
+      <input type="text" id="name" required>
+
+      <label>Mobile Number</label>
+      <input type="tel" id="mobile" required>
+
+      <label>Size</label>
+      <select id="size" required>
+        <option value="">Select Size</option>
+        <option>XS</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+        <option>XXL</option>
+      </select>
+
+      <label>Colour</label>
+      <select id="colour" required>
+        <option value="">Select Colour</option>
+        <option>Orange</option>
+        <option>White</option>
+      </select>
+
+      <label>Quantity</label>
+      <input type="number" id="qty" min="1" value="1" required>
+
+      <div class="banking">
+        <p><strong>Banking Details</strong></p>
+        <p>
+          Bank: <strong>ADD YOUR BANK NAME</strong><br>
+          Account Name: <strong>ADD ACCOUNT NAME</strong><br>
+          Account Number: <strong>XXXXXXXXXX</strong><br>
+          Branch Code: <strong>XXXXXX</strong><br>
+          Reference: <strong>Your Name + Tee</strong>
+        </p>
+        <p class="note">After payment, send your proof of payment on WhatsApp.</p>
+      </div>
+
+      <div class="cta">
+        <button type="submit">Send Proof on WhatsApp</button>
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
+<footer>
+  <p>Walk with Velan • Arogara Velan 🦚</p>
+</footer>
+
+<script>
+function sendOrderWhatsApp(){
+  const name = document.getElementById('name').value;
+  const mobile = document.getElementById('mobile').value;
+  const size = document.getElementById('size').value;
+  const colour = document.getElementById('colour').value;
+  const qty = document.getElementById('qty').value;
+
+  const message =
+    `Vanakkam 🙏%0A` +
+    `T-Shirt Order Details:%0A` +
+    `Name: ${name}%0A` +
+    `Mobile: ${mobile}%0A` +
+    `Size: ${size}%0A` +
+    `Colour: ${colour}%0A` +
+    `Quantity: ${qty}%0A%0A` +
+    `I have made payment and will send POP. Arogara Velan 🦚`;
+
+  window.open(
+    `https://wa.me/27676088488?text=${message}`,
+    '_blank'
+  );
+}
+</script>
+
+</body>
+</html>
